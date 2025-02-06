@@ -12,7 +12,7 @@
     "redirect_uris": [
         "sparroblu://oauth"
     ],
-    "request_url": "sparroblu://oauth",
+    "request_uri": 12345,
     "token_endpoint_auth_signing_alg": "ES256",
     "dpop_bound_access_tokens": true,
     "client_name": "Sparro Blu",
