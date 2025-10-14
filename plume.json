@@ -1,0 +1,21 @@
+  {
+  "client_id": "https://sparrowtek.com/plume.json",
+  "client_name": "Plume iOS",
+  "application_type": "native",
+  "grant_types": [
+    "authorization_code",
+    "refresh_token"
+  ],
+  "scope": "atproto",
+  "response_types": [
+    "code"
+  ],
+  "redirect_uris": [
+    "plume://oauth/callback"
+  ],
+  "token_endpoint_auth_method": "none",
+  "dpop_bound_access_tokens": true,
+  "client_uri": "https://sparrowtek.com",
+  "policy_uri": "https://sparrowtek.com/privacy",
+  "tos_uri": "https://sparrowtek.com/terms"
+}
