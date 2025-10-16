@@ -6,7 +6,7 @@
     "authorization_code",
     "refresh_token"
   ],
-  "scope": "atproto",
+  "scope": "atproto transition:generic",
   "response_types": [
     "code"
   ],
