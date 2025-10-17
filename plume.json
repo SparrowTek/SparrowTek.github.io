@@ -11,7 +11,7 @@
     "code"
   ],
   "redirect_uris": [
-    "com.sparrowtek.plume:/oauth/callback"
+    "plume:/oauth/callback"
   ],
   "token_endpoint_auth_method": "none",
   "dpop_bound_access_tokens": true,
