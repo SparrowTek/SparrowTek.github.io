@@ -2,7 +2,7 @@
     "client_id": "https://sparrowtek.com/plume.json",
     "client_name": "Plume",
     "client_uri": "https://sparrowtek.com",
-    "redirect_uris": ["com.sparrowtek.plume:/oauth/callback"],
+    "redirect_uris": ["com.sparrowtek:/oauth/callback"],
     "grant_types": ["authorization_code", "refresh_token"],
     "response_types": ["code"],
     "token_endpoint_auth_method": "none",
