@@ -1,13 +1,24 @@
 (function($) {
-    "use strict"; // Start of use strict
+    "use strict";
 
-    // jQuery for page scrolling feature - requires jQuery Easing plugin
+    // Smooth page scrolling for anchor links
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
+        var href = $anchor.attr('href');
+        if (href && href.charAt(0) === '#') {
+            $('html, body').stop().animate({
+                scrollTop: ($(href).offset().top - 50)
+            }, 1000, 'easeInOutExpo');
+            event.preventDefault();
+        }
+    });
+
+    // Scroll indicator click
+    $('.scroll-indicator').on('click', function() {
+        var target = $(this).data('href') || '#about';
         $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
-        }, 1250, 'easeInOutExpo');
-        event.preventDefault();
+            scrollTop: ($(target).offset().top - 50)
+        }, 1000, 'easeInOutExpo');
     });
 
     // Highlight the top nav as scrolling occurs
@@ -26,39 +37,35 @@
         offset: {
             top: 100
         }
-    })
+    });
 
-    // Initialize and Configure Scroll Reveal Animation
+    // Initialize ScrollReveal
     window.sr = ScrollReveal();
+
     sr.reveal('.sr-icons', {
         duration: 600,
-        scale: 0.3,
-        distance: '0px'
+        scale: 0.9,
+        distance: '20px',
+        origin: 'bottom',
+        easing: 'ease-out'
     }, 200);
-    sr.reveal('.sr-button', {
-        duration: 1000,
-        delay: 200
+
+    sr.reveal('.sr-project', {
+        duration: 600,
+        scale: 0.95,
+        distance: '30px',
+        origin: 'bottom',
+        easing: 'ease-out',
+        interval: 100
     });
+
     sr.reveal('.sr-contact', {
         duration: 600,
-        scale: 0.3,
-        distance: '0px'
-    }, 300);
-
-    // Initialize and Configure Magnific Popup Lightbox Plugin
-    $('.popup-gallery').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        tLoading: 'Loading image #%curr%...',
-        mainClass: 'mfp-img-mobile',
-        gallery: {
-            enabled: true,
-            navigateByImgClick: true,
-            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-        },
-        image: {
-            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-        }
+        scale: 0.95,
+        distance: '20px',
+        origin: 'bottom',
+        easing: 'ease-out',
+        interval: 100
     });
 
-})(jQuery); // End of use strict
+})(jQuery);
